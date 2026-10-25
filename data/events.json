@@ -1,0 +1,178 @@
+[
+  {
+    "TimeGenerated": "2026-10-25T03:07:18Z",
+    "EventId": "E01",
+    "Source": "Email",
+    "Account": "maya@wardlight.example",
+    "Device": "",
+    "IP": "203.0.113.50",
+    "Action": "EmailDelivered",
+    "Detail": "Fictional supplier invoice; message WL-MSG-001",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:08:18Z",
+    "EventId": "E02",
+    "Source": "Identity",
+    "Account": "maya@wardlight.example",
+    "Device": "WL-RECEPTION-01",
+    "IP": "203.0.113.50",
+    "Action": "SignInFailed",
+    "Detail": "Disposable lab account failure",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:08:30Z",
+    "EventId": "E03",
+    "Source": "Identity",
+    "Account": "maya@wardlight.example",
+    "Device": "WL-RECEPTION-01",
+    "IP": "203.0.113.50",
+    "Action": "SignInFailed",
+    "Detail": "Disposable lab account failure",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:08:42Z",
+    "EventId": "E04",
+    "Source": "Identity",
+    "Account": "maya@wardlight.example",
+    "Device": "WL-RECEPTION-01",
+    "IP": "203.0.113.50",
+    "Action": "SignInFailed",
+    "Detail": "Disposable lab account failure",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:08:54Z",
+    "EventId": "E05",
+    "Source": "Identity",
+    "Account": "maya@wardlight.example",
+    "Device": "WL-RECEPTION-01",
+    "IP": "203.0.113.50",
+    "Action": "SignInFailed",
+    "Detail": "Disposable lab account failure",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:09:06Z",
+    "EventId": "E06",
+    "Source": "Identity",
+    "Account": "maya@wardlight.example",
+    "Device": "WL-RECEPTION-01",
+    "IP": "203.0.113.50",
+    "Action": "SignInFailed",
+    "Detail": "Disposable lab account failure",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:09:18Z",
+    "EventId": "E07",
+    "Source": "Identity",
+    "Account": "maya@wardlight.example",
+    "Device": "WL-RECEPTION-01",
+    "IP": "203.0.113.50",
+    "Action": "SignInFailed",
+    "Detail": "Disposable lab account failure",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:09:30Z",
+    "EventId": "E08",
+    "Source": "Identity",
+    "Account": "maya@wardlight.example",
+    "Device": "WL-RECEPTION-01",
+    "IP": "203.0.113.50",
+    "Action": "SignInFailed",
+    "Detail": "Disposable lab account failure",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:09:42Z",
+    "EventId": "E09",
+    "Source": "Identity",
+    "Account": "maya@wardlight.example",
+    "Device": "WL-RECEPTION-01",
+    "IP": "203.0.113.50",
+    "Action": "SignInFailed",
+    "Detail": "Disposable lab account failure",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:11:18Z",
+    "EventId": "E10",
+    "Source": "Identity",
+    "Account": "maya@wardlight.example",
+    "Device": "WL-RECEPTION-01",
+    "IP": "203.0.113.50",
+    "Action": "SignInSucceeded",
+    "Detail": "Authentication details require further evidence",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:13:18Z",
+    "EventId": "E11",
+    "Source": "Endpoint",
+    "Account": "maya@wardlight.example",
+    "Device": "WL-RECEPTION-01",
+    "IP": "203.0.113.50",
+    "Action": "ProcessCreated",
+    "Detail": "powershell.exe -Command Write-Output WL-LAB",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:16:18Z",
+    "EventId": "E12",
+    "Source": "Data",
+    "Account": "maya@wardlight.example",
+    "Device": "WL-RECEPTION-01",
+    "IP": "203.0.113.50",
+    "Action": "FileAccessed",
+    "Detail": "WL-PATIENT-0001 export accessed; transfer unconfirmed",
+    "CorrelationId": "CASE-INVOICE"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:09:18Z",
+    "EventId": "E13",
+    "Source": "Identity",
+    "Account": "svc-backup@wardlight.example",
+    "Device": "WL-BACKUP-01",
+    "IP": "192.0.2.20",
+    "Action": "SignInFailed",
+    "Detail": "Known stale credential after scheduled rotation",
+    "CorrelationId": "CASE-BENIGN"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:10:18Z",
+    "EventId": "E14",
+    "Source": "Identity",
+    "Account": "svc-backup@wardlight.example",
+    "Device": "WL-BACKUP-01",
+    "IP": "192.0.2.20",
+    "Action": "SignInFailed",
+    "Detail": "Known stale credential after scheduled rotation",
+    "CorrelationId": "CASE-BENIGN"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:11:18Z",
+    "EventId": "E15",
+    "Source": "Identity",
+    "Account": "svc-backup@wardlight.example",
+    "Device": "WL-BACKUP-01",
+    "IP": "192.0.2.20",
+    "Action": "SignInFailed",
+    "Detail": "Known stale credential after scheduled rotation",
+    "CorrelationId": "CASE-BENIGN"
+  },
+  {
+    "TimeGenerated": "2026-10-25T03:14:18Z",
+    "EventId": "E16",
+    "Source": "Cloud",
+    "Account": "engineer@wardlight.example",
+    "Device": "WL-APP-01",
+    "IP": "192.0.2.30",
+    "Action": "ResourceTagged",
+    "Detail": "Approved lab tag change CHG-001",
+    "CorrelationId": "CASE-CLOUD"
+  }
+]

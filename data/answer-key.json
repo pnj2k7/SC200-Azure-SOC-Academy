@@ -1,0 +1,22 @@
+{
+  "rows": 16,
+  "suspicious_failures": 8,
+  "benign_failures": 3,
+  "failure_burst_accounts": [
+    "maya@wardlight.example"
+  ],
+  "correlation_event_ids": [
+    "E10",
+    "E11",
+    "E12"
+  ],
+  "actions": {
+    "EmailDelivered": 1,
+    "SignInFailed": 11,
+    "SignInSucceeded": 1,
+    "ProcessCreated": 1,
+    "FileAccessed": 1,
+    "ResourceTagged": 1
+  },
+  "conclusion": "Sequence supports investigation, not confirmed exfiltration or malware execution."
+}

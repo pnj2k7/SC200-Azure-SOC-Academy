@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Day 4 notes: The missing telemetry | Wardlight SOC Academy</title><link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script></head><body><header><a class="brand" href="../../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../../index.html">Overview</a><a href="../../getting-started.html">Start here</a><a href="../../days/index.html">Learning days</a><a href="../../coverage/index.html">Coverage</a><a href="../../downloads.html">Practical files</a><a href="../../artefacts/attack-map.html">Case explorer</a><a href="../../coursework/index.html">Assessment</a></nav></header><main><article><h1>Day 4 notes: The missing telemetry</h1>
+<h2>Start in plain language</h2>
+<p>Different systems describe events differently. This lesson makes their records comparable, as if several departments agreed on the same incident form.</p>
+<h2>Words you will meet</h2>
+<p>Schema: the names and types of fields. CEF: a common security-message format. Indicator: a known clue, such as an IP address, that deserves investigation.</p>
+<h2>How the parts work together</h2>
+<p>Source logs, collection transport, transformations and destination schemas are separate failure points. TI matches require field normalization, indicator freshness and context; a match alone is not a verdict.</p>
+<h2>Apply it to Wardlight</h2>
+<p>A partner gateway and hospital application use different log formats. Bring both into the investigation with a traceable schema. The technical result matters because the hospital needs a decision it can trust while continuing to serve patients. State what the evidence establishes before recommending an action.</p>
+<h2>Worked reasoning</h2>
+<p>Question: Why can a successful HTTP ingestion response coexist with an empty investigation result?</p>
+<p>Reasoning: Delivery is asynchronous; the query can target the wrong table/window, or transformations can filter rows. Check the DCR, stream, timestamps and ingestion errors.</p>
+<h2>Common mistake</h2>
+<p>Use a wrong stream name in a single synthetic ingestion request, or map IP to an empty field in a saved query.</p>
+<p>Correction: Correct stream/schema mapping, retain the error response without tokens, and re-run once. Do not rotate credentials to solve a field mismatch.</p>
+<h2>What the instructor demonstrates</h2>
+<p>Walk through the first two lab steps, point out the selected tenant/workspace and show a successful result. Explain one failure state and ask learners to predict its cause before correcting it. End by showing the evidence that would allow a colleague to reproduce the finding.</p>
+<h2>Required reading</h2>
+<p><a href="https://learn.microsoft.com/en-us/azure/azure-monitor/logs/tutorial-logs-ingestion-portal">Ingestion</a> · <a href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Official labs</a></p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

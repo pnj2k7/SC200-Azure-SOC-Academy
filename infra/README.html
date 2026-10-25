@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Deploy the Azure core | Wardlight SOC Academy</title><link rel="stylesheet" href="../assets/css/site.css"><script defer src="../assets/js/site.js"></script></head><body><header><a class="brand" href="../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../index.html">Overview</a><a href="../getting-started.html">Start here</a><a href="../days/index.html">Learning days</a><a href="../coverage/index.html">Coverage</a><a href="../downloads.html">Practical files</a><a href="../artefacts/attack-map.html">Case explorer</a><a href="../coursework/index.html">Assessment</a></nav></header><main><article><h1>Deploy the Azure core</h1>
+<p>This reviewable template creates only a Log Analytics workspace, Sentinel onboarding, a custom Analytics table and a direct-ingestion DCR. It does not create Microsoft 365 licenses, endpoint sensors, Windows/Linux VMs, role grants, Activity diagnostics, lake/graph/AI resources or a complete corporate SOC. Treat it as a lab starter and run what-if first. The 0.1 GB daily quota is a lab guardrail, not a guaranteed spending ceiling; caps can interrupt collection and do not apply to all meters.</p>
+<h2>Deploy from Azure Cloud Shell Bash</h2>
+<p>Upload main.bicep. Replace the subscription ID and training owner; choose a supported region after checking organisational data residency and service availability.</p>
+<pre><code>az account set --subscription YOUR_SUBSCRIPTION_ID
+az account show --query &#x27;{name:name,id:id,tenantId:tenantId}&#x27; -o table
+az group create --name rg-wardlight-sc200 --location southeastasia --tags Module=SC200 Environment=Training Owner=YOUR_TRAINING_ID
+az deployment group what-if --resource-group rg-wardlight-sc200 --template-file main.bicep --parameters owner=YOUR_TRAINING_ID
+az deployment group create --resource-group rg-wardlight-sc200 --name wardlight-core --template-file main.bicep --parameters owner=YOUR_TRAINING_ID
+az deployment group show --resource-group rg-wardlight-sc200 --name wardlight-core --query properties.outputs</code></pre>
+<p>Contributor can deploy resources but cannot normally assign roles. Owner/User Access Administrator or another suitably authorised identity must grant role assignments. Record the separate assignment step. Provider registration, regional support and tenant policy can affect deployment; inspect the deployment error instead of broadening permissions blindly.</p>
+<h2>Ingest the synthetic JSON</h2>
+<p>Generate fresh samples on your machine with <code>python scripts/make_sample_data.py</code>, then upload data/events.json to Cloud Shell. Copy the deployment outputs into the variables below; use the signed-in user’s object ID for a training user, or the approved service-principal object ID for that identity. Do not commit output containing credentials or tokens.</p>
+<pre><code>DCR_RESOURCE_ID=&#x27;PASTE_DCR_RESOURCE_ID&#x27;
+DCR_IMMUTABLE_ID=&#x27;PASTE_DCR_IMMUTABLE_ID&#x27;
+INGESTION_ENDPOINT=&#x27;PASTE_LOGS_INGESTION_ENDPOINT&#x27;
+SENDER_OBJECT_ID=&#x27;PASTE_SENDER_OBJECT_ID&#x27;
+az role assignment create --assignee-object-id &quot;$SENDER_OBJECT_ID&quot; --assignee-principal-type User --role &#x27;Monitoring Metrics Publisher&#x27; --scope &quot;$DCR_RESOURCE_ID&quot;</code></pre>
+<p>If using a service principal, use the appropriate principal type and authorised authentication flow instead. Allow role propagation. The following sends a small synthetic batch; the token is held in a shell variable and not printed.</p>
+<pre><code>LAB_TOKEN=$(az account get-access-token --resource https://monitor.azure.com/ --query accessToken -o tsv)
+curl --fail-with-body --request POST &quot;${INGESTION_ENDPOINT%/}/dataCollectionRules/${DCR_IMMUTABLE_ID}/streams/Custom-WardlightEvents?api-version=2023-01-01&quot; --header &quot;Authorization: Bearer $LAB_TOKEN&quot; --header &#x27;Content-Type: application/json&#x27; --data-binary @events.json
+unset LAB_TOKEN</code></pre>
+<p>A successful response can have an empty body. Allow ingestion time and query <code>WardlightEvents_CL | summarize count() by Source, Action</code>. A 403 suggests permissions/token audience; a 400 suggests stream/schema/payload; an empty query may be time, destination, transformation or delivery delay. Do not paste bearer tokens into evidence. Run the same batch only once when testing baseline counts; repeated ingestion duplicates events unless your query deduplicates EventId.</p>
+<h2>More collection</h2>
+<p>Follow Days 2–4 for Activity diagnostics, AMA/DCR, optional WEF, Syslog/CEF and TI. Those sources are deliberately configured and tested individually. Main.bicep uses a DCR direct ingestion endpoint; a separate DCE may still be required for private networking or other collection designs outside this lab scope.</p>
+<h2>Validation boundary</h2>
+<p>No live Azure deployment is claimed by the course files. Run Bicep compilation, Azure what-if and the deployed proof in your own isolated subscription before corporate use. Product availability and policies can change. Review cleanup.md before removing anything.</p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

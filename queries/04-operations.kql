@@ -1,0 +1,5 @@
+// Sentinel Logs workbook query. Time picker and workspace must match.
+WardlightEvents_CL
+| where TimeGenerated > ago(24h)
+| summarize Rows=count(), LastSeen=max(TimeGenerated) by Source, Action
+| order by Rows desc

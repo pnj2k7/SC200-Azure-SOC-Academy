@@ -1,0 +1,8 @@
+Role,Product,Scope,Permission,AssignedBy,LicenseConfirmed,Expiry,TestResult
+Platform engineer,Azure,Lab resource group,Contributor,,,,
+Analyst,Sentinel,Lab resource group,Reader or Responder,,,,
+Detection engineer,Sentinel,Lab resource group,Contributor,,,,
+Endpoint responder,Defender,Lab device group,Scoped response permission,,,,
+Data investigator,Purview,Lab case and sources,Case and search role,,,,
+Automation service,Sentinel,Playbook resource group,Automation Contributor,,,,
+Workflow identity,Sentinel,Lab workspace,Permission for selected action,,,,

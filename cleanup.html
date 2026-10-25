@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cleanup and cost closure | Wardlight SOC Academy</title><link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script></head><body><header><a class="brand" href="index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="index.html">Overview</a><a href="getting-started.html">Start here</a><a href="days/index.html">Learning days</a><a href="coverage/index.html">Coverage</a><a href="downloads.html">Practical files</a><a href="artefacts/attack-map.html">Case explorer</a><a href="coursework/index.html">Assessment</a></nav></header><main><article><h1>Cleanup and cost closure</h1>
+<p>Use only your dedicated training scope. Read and complete this list before any group deletion; it includes settings outside the resource group. Deleting evidence is irreversible, so preserve only the redacted records your training policy requires first. Do not delete any shared or production resource.</p>
+<h2>End of each session</h2>
+<ol>
+<li>Export the redacted evidence, update the matrix and ledger and list deliberately retained resources with owner and removal date.</li>
+<li>Disable lab detection/automation rules, playbook triggers, job schedules and optional compute sessions that are no longer required.</li>
+<li>Undo temporary messages, indicators, device isolation, group assignments and policy changes; verify restored state.</li>
+<li>Deallocate optional VMs. Disks, public IPs and other resources may still bill; record them explicitly.</li>
+</ol>
+<h2>Final teardown</h2>
+<ol>
+<li>Stop data sources/forwarding and remove the lab subscription Activity diagnostic setting or policy assignment/remediation created for the course. This may sit outside the resource group.</li>
+<li>Disable Sentinel automation rules, playbooks, KQL/notebook jobs, Summary rules and any separately provisioned compute. Verify schedules are disabled, not simply hidden.</li>
+<li>Remove temporary Azure role grants, app grants/secrets, managed-identity assignments and client integrations created for the lab. Preserve recovery access.</li>
+<li>Offboard the disposable endpoint using the supported product process if retaining the machine. Undo ASR/policy settings, temporary device group rules and notification subscriptions.</li>
+<li>Remove lab-only Purview cases/searches and exports under retention policy; undo test SaaS/Entra actions and delete disposable mail/files only after recording evidence.</li>
+<li>Disable any Defender for Cloud plan enabled solely for the lab and check subscription/resource overrides. Review tenant-level trial renewal and licensed capacity separately. Deleting the group does not cancel a Microsoft 365 subscription or AI capacity elsewhere.</li>
+<li>In the Azure portal select rg-wardlight-sc200. Verify the subscription, tags and complete resource list. If every listed resource is dedicated to the course and evidence is preserved, delete the group using the portal confirmation. Do not use a broad scripted deletion.</li>
+<li>Check resources in every region used, source diagnostics/policies, workspaces, Logic Apps, disks, storage, networking and compute. Confirm the group is absent and inspect any retained items separately.</li>
+<li>Revisit Cost Management after billing data catches up and check for continuing meters. Keep the budget alert active until closure. A zero forecast alone does not prove all resources are gone.</li>
+</ol>
+<h2>Closure record</h2>
+<p>Record UTC time, owner, scope, what was removed, what was retained, license/renewal status, measured cost and the date of the follow-up billing check. A second person should verify closure for corporate delivery.</p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

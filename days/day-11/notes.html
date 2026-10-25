@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Day 11 notes: Find the data trail | Wardlight SOC Academy</title><link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script></head><body><header><a class="brand" href="../../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../../index.html">Overview</a><a href="../../getting-started.html">Start here</a><a href="../../days/index.html">Learning days</a><a href="../../coverage/index.html">Coverage</a><a href="../../downloads.html">Practical files</a><a href="../../artefacts/attack-map.html">Case explorer</a><a href="../../coursework/index.html">Assessment</a></nav></header><main><article><h1>Day 11 notes: Find the data trail</h1>
+<h2>Start in plain language</h2>
+<p>Finding a file and proving that someone downloaded it are different tasks. Use the right record for each question and collect only the information the investigation needs.</p>
+<h2>Words you will meet</h2>
+<p>Audit: a history of recorded actions. eDiscovery: authorised searching and preservation of business information. DLP: controls designed to reduce inappropriate disclosure.</p>
+<h2>How the parts work together</h2>
+<p>Purview investigation has privacy and authorization boundaries. Audit answers what happened, content search finds material, Graph logs show API requests, and alert context guides response. None substitutes for the others.</p>
+<h2>Apply it to Wardlight</h2>
+<p>A fictional export might contain patient identifiers. Investigate audit, content, Graph and Purview signals without touching real records. The technical result matters because the hospital needs a decision it can trust while continuing to serve patients. State what the evidence establishes before recommending an action.</p>
+<h2>Worked reasoning</h2>
+<p>Question: A content search finds a sensitive marker. What additional evidence supports an exfiltration claim?</p>
+<p>Reasoning: A relevant access/download/share event tied to the actor and file, corroborating session/app context and an authorized interpretation of the event.</p>
+<h2>Common mistake</h2>
+<p>Use a Content search hit as proof the user downloaded the file.</p>
+<p>Correction: Obtain the corresponding audit action and correlate actor/object/time; the search hit proves content presence, not the download.</p>
+<h2>What the instructor demonstrates</h2>
+<p>Walk through the first two lab steps, point out the selected tenant/workspace and show a successful result. Explain one failure state and ask learners to predict its cause before correcting it. End by showing the evidence that would allow a colleague to reproduce the finding.</p>
+<h2>Required reading</h2>
+<p><a href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Official labs</a></p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

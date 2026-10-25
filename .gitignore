@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+*.pem
+*.pfx
+*.publishsettings
+evidence/
+private/
+*.zip
+node_modules/
+_site/

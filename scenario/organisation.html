@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wardlight Hospitals: the training scenario | Wardlight SOC Academy</title><link rel="stylesheet" href="../assets/css/site.css"><script defer src="../assets/js/site.js"></script></head><body><header><a class="brand" href="../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../index.html">Overview</a><a href="../getting-started.html">Start here</a><a href="../days/index.html">Learning days</a><a href="../coverage/index.html">Coverage</a><a href="../downloads.html">Practical files</a><a href="../artefacts/attack-map.html">Case explorer</a><a href="../coursework/index.html">Assessment</a></nav></header><main><article><h1>Wardlight Hospitals: the training scenario</h1>
+<p>Wardlight is a fictional private hospital group with sites in Colombo and Kandy. Its reception staff use Microsoft 365 and supported Windows devices; a patient-portal pilot runs in Azure. An external laboratory sends operational messages through a gateway. All data and identities in this course are synthetic.</p>
+<h2>The incident</h2>
+<p>A supplier invoice appears in a reception mailbox. A staff account then records failed sign-ins, a process starts on a workstation and an export file is accessed. The hospital manager wants facts, not an assumption that every warning is an attack. One noisy service-account pattern and a misleading claim are deliberately included.</p>
+<h2>The people</h2>
+<ul>
+<li>Hospital manager: protects continuity of patient services and approves business-impacting response.</li>
+<li>Incident lead: owns severity, decisions, escalation and closure.</li>
+<li>Analyst: collects evidence, tests explanations and recommends action.</li>
+<li>Platform engineer: configures scoped collection, detection and workflows.</li>
+<li>Data owner/privacy lead: authorises content searches and evidence handling.</li>
+<li>Billing owner: checks spending and closes resources/trials.</li>
+</ul>
+<h2>Requirements</h2>
+<ol>
+<li>Every confirmed finding must cite evidence and UTC time.</li>
+<li>Production services and real employee/patient data are outside the lab.</li>
+<li>Containment must have a clear target, business impact, approval and rollback.</li>
+<li>Routine automation is scoped to lab incidents and independently verified.</li>
+<li>Costs, permissions and incomplete capabilities remain visible.</li>
+<li>A second analyst must be able to reproduce the final report.</li>
+</ol>
+<h2>Numbered architecture</h2>
+<ol>
+<li>Tenant, scoped identities and billing guardrails.</li>
+<li>Sentinel workspace and retention decisions.</li>
+<li>Windows source, AMA/DCR and optional WEF collector.</li>
+<li>Syslog/CEF gateway, custom application records and indicators.</li>
+<li>Endpoint protection and response.</li>
+<li>Scheduled/custom detections and anomaly/ATT&amp;CK review.</li>
+<li>Scoped automation rule and harmless Logic App.</li>
+<li>Email, identity, SaaS and data investigations.</li>
+<li>Cloud workload protection evidence.</li>
+<li>Cross-product case, timeline and operational workbook.</li>
+<li>Hunting, entity relationships and historical analysis.</li>
+<li>Validated notebook/AI assistance, capstone and teardown.</li>
+</ol>
+<p><a href="architecture.svg">Open the architecture</a>. Solid flow in the diagram represents the teaching sequence; product-to-product integration must be configured and licensed separately. The custom table is a synthetic lab source and does not populate built-in Defender tables.</p>
+<h2>Naming</h2>
+<p>Resource group: rg-wardlight-sc200. Workspace: law-wardlight-soc. Custom table: WardlightEvents_CL. Analyst: analyst-lab. Device: WL-RECEPTION-01. Test person: maya@wardlight.example. Test IP: 203.0.113.50. The .example domain and documentation IP range are intentionally non-production.</p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

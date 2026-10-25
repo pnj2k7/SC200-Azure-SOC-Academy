@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Publish to pnj2k7 on GitHub | Wardlight SOC Academy</title><link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script></head><body><header><a class="brand" href="index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="index.html">Overview</a><a href="getting-started.html">Start here</a><a href="days/index.html">Learning days</a><a href="coverage/index.html">Coverage</a><a href="downloads.html">Practical files</a><a href="artefacts/attack-map.html">Case explorer</a><a href="coursework/index.html">Assessment</a></nav></header><main><article><h1>Publish to pnj2k7 on GitHub</h1>
+<p>Target repository: pnj2k7/SC200-Azure-SOC-Academy. This target name is a proposal until creation is confirmed; no published URL is claimed by these files.</p>
+<h2>Publish the reviewed files</h2>
+<ol>
+<li>Sign into GitHub as pnj2k7 and create a new public repository named SC200-Azure-SOC-Academy without an initial README/license. Confirm that you intend the original training content to be public.</li>
+<li>Upload the contents of this folder, including .github/workflows/pages.yml and .nojekyll. Do not upload the parent Cloud Computing folder; it contains unrelated private learning material. Check that no evidence, tokens, keys or onboarding packages are included.</li>
+<li>Alternatively use an authenticated Git CLI from this directory:</li>
+</ol>
+<pre><code>git init
+git branch -M main
+git add .
+git commit -m &quot;Add Wardlight SC-200 scenario learning programme&quot;
+git remote add origin https://github.com/pnj2k7/SC200-Azure-SOC-Academy.git
+git push -u origin main</code></pre>
+<ol>
+<li>In repository Settings &gt; Pages choose GitHub Actions as the source. The included workflow validates the content, creates a clean site artifact and deploys it with GitHub’s Pages actions. No Azure hosting is needed for these static learning pages.</li>
+<li>Inspect the Pages workflow and open the deployment URL it returns. If using this account/name, the expected address is https://pnj2k7.github.io/SC200-Azure-SOC-Academy/ after successful publication; this is not a live-link claim.</li>
+<li>Test the landing page, a lab, quiz, coverage page and practical downloads from the deployed URL. Publish the URL only after those checks pass.</li>
+</ol>
+<h2>Offline use</h2>
+<p>Use GitHub Code &gt; Download ZIP, extract and open index.html. Downloadable practical files remain under infra, queries, scripts, notebooks and data. handbook.html is a single-file reading edition; it does not embed the practical source files. No service worker, external font or CDN is required.</p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

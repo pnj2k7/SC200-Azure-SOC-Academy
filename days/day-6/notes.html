@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Day 6 notes: Investigate the workstation | Wardlight SOC Academy</title><link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script></head><body><header><a class="brand" href="../../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../../index.html">Overview</a><a href="../../getting-started.html">Start here</a><a href="../../days/index.html">Learning days</a><a href="../../coverage/index.html">Coverage</a><a href="../../downloads.html">Practical files</a><a href="../../artefacts/attack-map.html">Case explorer</a><a href="../../coursework/index.html">Assessment</a></nav></header><main><article><h1>Day 6 notes: Investigate the workstation</h1>
+<h2>Start in plain language</h2>
+<p>An alert is a warning to investigate. A timeline helps explain what happened before and after the warning; containment limits further harm.</p>
+<h2>Words you will meet</h2>
+<p>Isolation: restricting a device’s communication. Investigation package: collected diagnostic evidence. Remediation: removing the cause and restoring a safe state.</p>
+<h2>How the parts work together</h2>
+<p>Investigation connects alerts to evidence. Automated investigation verdicts, disruption and analyst actions need separate verification. Containment trades business availability for risk reduction, so scope and rollback matter.</p>
+<h2>Apply it to Wardlight</h2>
+<p>A benign simulation triggers a device alert. Build a timeline and contain the right entity. The technical result matters because the hospital needs a decision it can trust while continuing to serve patients. State what the evidence establishes before recommending an action.</p>
+<h2>Worked reasoning</h2>
+<p>Question: Why is an isolation action marked submitted insufficient to close the case?</p>
+<p>Reasoning: Submitted is not completed. Check the action outcome, device reachability/last seen, residual identity risk and recovery before closure.</p>
+<h2>Common mistake</h2>
+<p>Use the wrong device name from the case packet in a draft containment request; do not execute it.</p>
+<p>Correction: Cross-check DeviceId, account and UTC time against the incident; require the exact entity ID before acting.</p>
+<h2>What the instructor demonstrates</h2>
+<p>Walk through the first two lab steps, point out the selected tenant/workspace and show a successful result. Explain one failure state and ask learners to predict its cause before correcting it. End by showing the evidence that would allow a colleague to reproduce the finding.</p>
+<h2>Required reading</h2>
+<p><a href="https://learn.microsoft.com/en-us/defender-xdr/pilot-deploy-defender-endpoint">Endpoint pilot</a> · <a href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Official labs</a></p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

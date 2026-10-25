@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Day 10 notes: Identity crosses the perimeter | Wardlight SOC Academy</title><link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script></head><body><header><a class="brand" href="../../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../../index.html">Overview</a><a href="../../getting-started.html">Start here</a><a href="../../days/index.html">Learning days</a><a href="../../coverage/index.html">Coverage</a><a href="../../downloads.html">Practical files</a><a href="../../artefacts/attack-map.html">Case explorer</a><a href="../../coursework/index.html">Assessment</a></nav></header><main><article><h1>Day 10 notes: Identity crosses the perimeter</h1>
+<h2>Start in plain language</h2>
+<p>An attacker may use a valid account or a connected business application. Changing a password can help, but the investigation also needs to check active access and application permissions.</p>
+<h2>Words you will meet</h2>
+<p>Session: an ongoing signed-in interaction. Token: a digital access credential. OAuth consent: permission for an application to act within an agreed scope.</p>
+<h2>How the parts work together</h2>
+<p>Entra Identity Protection, Defender for Identity and Cloud Apps see different parts of an attack. Session revocation is not a guarantee that every access token disappears instantly; verify behavior and residual access.</p>
+<h2>Apply it to Wardlight</h2>
+<p>A receptionist account appears in a SaaS alert and an identity alert. Decide what to revoke and why. The technical result matters because the hospital needs a decision it can trust while continuing to serve patients. State what the evidence establishes before recommending an action.</p>
+<h2>Worked reasoning</h2>
+<p>Question: Why does resetting a password alone leave an incomplete SaaS response?</p>
+<p>Reasoning: Investigate existing sessions, authentication methods, OAuth grants and app permissions. Some access can persist independently of the old password.</p>
+<h2>Common mistake</h2>
+<p>Join on display name instead of object ID in the packet, merging two people with the same name.</p>
+<p>Correction: Use object ID or normalized UPN with tenant context; document any remaining ambiguity and exclude the false entity link.</p>
+<h2>What the instructor demonstrates</h2>
+<p>Walk through the first two lab steps, point out the selected tenant/workspace and show a successful result. Explain one failure state and ask learners to predict its cause before correcting it. End by showing the evidence that would allow a colleague to reproduce the finding.</p>
+<h2>Required reading</h2>
+<p><a href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Official labs</a></p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

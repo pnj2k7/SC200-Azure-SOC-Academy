@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lab 10: Identity crosses the perimeter | Wardlight SOC Academy</title><link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script></head><body><header><a class="brand" href="../../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../../index.html">Overview</a><a href="../../getting-started.html">Start here</a><a href="../../days/index.html">Learning days</a><a href="../../coverage/index.html">Coverage</a><a href="../../downloads.html">Practical files</a><a href="../../artefacts/attack-map.html">Case explorer</a><a href="../../coursework/index.html">Assessment</a></nav></header><main><article><h1>Lab 10: Identity crosses the perimeter</h1>
+<h2>0. Before you start</h2>
+<p><strong>Access:</strong> Entra ID risk investigation entitlement (often P2), Defender for Cloud Apps; optional Defender for Identity with supported AD sensor lab. Licensed or simulation.</p>
+<p><strong>Dependencies:</strong> Day 9 learning and the relevant shared workspace/case packet. Read the access line: the next product may need a separate license.</p>
+<p><strong>Time:</strong> approximately 3 hours of practical work. <strong>Safety boundary:</strong> dedicated lab resources and fictional data only. <strong>Evidence:</strong> D10-setup, D10-proof, D10-fault, D10-cleanup plus the objective IDs mapped to this day.</p>
+<p>If a required product is unavailable, use the bundled scenario cards, synthetic data and written designs. Label every proposed portal action Simulation/Design-only and leave live execution Pending. Do not treat a synthetic event as a real product alert.</p>
+<h2>1. Objective</h2>
+<p>A receptionist account appears in a SaaS alert and an identity alert. Decide what to revoke and why.</p>
+<h2>2. Timed segments</h2>
+<table><thead><tr><th>Segment</th><th>Minutes</th><th>Outcome</th></tr></thead><tbody><tr><td>Access, scope and prediction</td><td>20</td><td>Identity, permissions and expected result recorded</td></tr><tr><td>Build or investigate</td><td>85</td><td>Numbered steps completed</td></tr><tr><td>Prove and break/fix</td><td>45</td><td>Evidence and corrected state</td></tr><tr><td>Cleanup and report</td><td>30</td><td>Cost and closure record</td></tr></tbody></table>
+<h2>3. Steps</h2>
+<ol>
+<li>Open CASE-IDENTITY. Map account object ID, UPN, session, device and IP. In live Entra inspect sign-in and audit logs for a known test account, including authentication details, Conditional Access result and risk where licensed.</li>
+</ol>
+<ol>
+<li>Investigate the account entity and any Cloud Apps alert. Inspect app activity, OAuth application permissions, app governance/risk context and affected files. A sanctioned app can still be abused through an excessive permission grant.</li>
+</ol>
+<ol>
+<li>For a disposable compromised account case choose remediation based on the evidence: revoke sessions, reset credentials and review authentication methods; disable the account only with a recovery plan. Record which action affects sessions, tokens and future sign-ins; verify actual results.</li>
+</ol>
+<ol>
+<li>In Cloud Apps inspect available session/access policy controls and consent governance actions. For the lab, review rather than revoke a real business application. In the packet propose a scoped consent/app action, owner notification and reauthorization plan.</li>
+</ol>
+<ol>
+<li>For Defender for Identity use the supported AD sensor lab if available; inspect a sample identity alert, source/destination host and lateral-movement path. Without AD/sensors complete CASE-IDENTITY-AD and mark sensor deployment and live response Pending.</li>
+</ol>
+<ol>
+<li>Join identity, SaaS and endpoint evidence by stable IDs and UTC interval. Identify a benign travel explanation and test it against MFA, device and token evidence before classifying the case.</li>
+</ol>
+<h2>4. Prove it</h2>
+<p>An identity/SaaS response plan with distinct Entra, Cloud Apps and on-premises Identity evidence and rollback.</p>
+<p>Record the exact query/action, UTC interval, result and evidence reference. Ask a colleague to explain what the evidence establishes. If the result differs, diagnose permissions, feature availability, source collection, schema and time scope before broadening access or collecting more data.</p>
+<h2>5. Break it</h2>
+<p><strong>Controlled fault:</strong> Join on display name instead of object ID in the packet, merging two people with the same name.</p>
+<p>Predict the symptom first. Save the faulty result with the original configuration. Apply the fault only to a disposable lab copy or worksheet as specified. <strong>Repair:</strong> Use object ID or normalized UPN with tenant context; document any remaining ambiguity and exclude the false entity link. Re-run the proof and record the root cause, symptom, diagnostic evidence and restored state. Never deliberately disable production protection.</p>
+<h2>6. Teardown</h2>
+<ul>
+<li>Save only redacted evidence privately. Keep original event references and UTC times.</li>
+<li>Undo the day’s test changes, temporary role assignments, policies, messages, indicators or actions. Confirm the restored state; do not remove the shared workspace before later lessons.</li>
+<li>Disable temporary detection/automation rules and job schedules; turn off or delete optional workflows/compute when finished. Deallocate optional VMs; their disks can still bill.</li>
+<li>Review cleanup.md for tenant-level licenses, subscription plan settings and collection that a resource-group deletion will not remove. Record anything deliberately retained for the next day, owner and deletion date.</li>
+</ul>
+<h2>7. Cost line</h2>
+<p>Before starting, list each planned meter in templates/cost-ledger.csv: ingestion/retention, optional VM/disks, Logic Apps actions, licensed trial/capacity and any advanced scan/compute. Offline simulation creates no Azure resources. Use current regional prices; do not write zero just because credits may apply. After the lab record actual usage when available, currency, delay and remaining resources.</p>
+<h2>8. Evidence required</h2>
+<p>Complete templates/evidence-pack.md. Include scope/access, one successful outcome, the break/fix comparison, explanation in your own words and verified cleanup. Map E04, E05, E06 to evidence. Record Live verified, Simulation complete, Design-only or Pending per objective; one overall day checkbox cannot prove every subskill.</p>
+<h2>9. Wardlight connection</h2>
+<p>An attacker may use a valid account or a connected business application. Changing a password can help, but the investigation also needs to check active access and application permissions. In your final paragraph explain the business decision your evidence supports and what remains uncertain.</p>
+<h2>Reading and next step</h2>
+<p><a href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Official labs</a></p>
+<p><a href="notes.html">Daily notes</a> · <a href="../../practice/PQ10.html">Practice</a> · <a href="../index.html">All days</a></p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

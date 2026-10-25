@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Day 13 notes: Run the incident bridge | Wardlight SOC Academy</title><link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script></head><body><header><a class="brand" href="../../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../../index.html">Overview</a><a href="../../getting-started.html">Start here</a><a href="../../days/index.html">Learning days</a><a href="../../coverage/index.html">Coverage</a><a href="../../downloads.html">Practical files</a><a href="../../artefacts/attack-map.html">Case explorer</a><a href="../../coursework/index.html">Assessment</a></nav></header><main><article><h1>Day 13 notes: Run the incident bridge</h1>
+<h2>Start in plain language</h2>
+<p>A case connects the warnings, evidence, decisions and people responsible. It should let a colleague understand what is confirmed, what is uncertain and what happens next.</p>
+<h2>Words you will meet</h2>
+<p>Incident: related security events that require investigation. Correlation: connecting evidence. UTC: a shared time standard used to compare events from different locations.</p>
+<h2>How the parts work together</h2>
+<p>An incident is a coordinated investigation with business decisions, not just a pile of alerts. A case records hypotheses, evidence, actions and ownership while the team tests the attack story.</p>
+<h2>Apply it to Wardlight</h2>
+<p>Join the invoice, identity, endpoint and data signals into a case the hospital can act on. The technical result matters because the hospital needs a decision it can trust while continuing to serve patients. State what the evidence establishes before recommending an action.</p>
+<h2>Worked reasoning</h2>
+<p>Question: Two alerts share an IP. Is that enough to declare lateral movement?</p>
+<p>Reasoning: No. NAT/proxies and shared infrastructure create coincidences. Seek host, identity, process/session and time evidence supporting the movement.</p>
+<h2>Common mistake</h2>
+<p>The packet gives one device’s timestamp in local time. Build the draft timeline without normalizing it and identify the contradiction.</p>
+<p>Correction: Normalize to UTC, retain original timezone and event IDs, then re-evaluate causality. Temporal proximity alone does not prove lateral movement.</p>
+<h2>What the instructor demonstrates</h2>
+<p>Walk through the first two lab steps, point out the selected tenant/workspace and show a successful result. Explain one failure state and ask learners to predict its cause before correcting it. End by showing the evidence that would allow a colleague to reproduce the finding.</p>
+<h2>Required reading</h2>
+<p><a href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Official labs</a></p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

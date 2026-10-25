@@ -1,0 +1,12 @@
+// Synthetic custom-table evidence, not real Defender data.
+let Base = WardlightEvents_CL
+| where TimeGenerated > ago(24h)
+| summarize arg_max(TimeGenerated, *) by EventId;
+let Failures = Base | where Action == "SignInFailed"
+| summarize Failures=count(), FirstFailure=min(TimeGenerated), LastFailure=max(TimeGenerated) by Account;
+Base
+| where Action in ("SignInSucceeded", "ProcessCreated", "FileAccessed")
+| join kind=inner Failures on Account
+| where Failures >= 5 and TimeGenerated >= LastFailure
+| project TimeGenerated, Account, Device, Action, Detail, Failures, EventId
+| order by TimeGenerated asc

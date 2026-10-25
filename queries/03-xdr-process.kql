@@ -1,0 +1,8 @@
+// Defender Advanced Hunting only. Requires onboarded endpoint telemetry.
+// A lab file name is not inherently malicious. Inspect context before detection.
+DeviceProcessEvents
+| where Timestamp > ago(24h)
+| where FileName =~ "powershell.exe"
+| where ProcessCommandLine contains "WL-LAB"
+| project Timestamp, DeviceId, ReportId, DeviceName, AccountName,
+          FileName, ProcessCommandLine, InitiatingProcessFileName

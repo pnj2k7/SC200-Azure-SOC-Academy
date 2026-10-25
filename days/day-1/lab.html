@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lab 1: Open the SOC | Wardlight SOC Academy</title><link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script></head><body><header><a class="brand" href="../../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../../index.html">Overview</a><a href="../../getting-started.html">Start here</a><a href="../../days/index.html">Learning days</a><a href="../../coverage/index.html">Coverage</a><a href="../../downloads.html">Practical files</a><a href="../../artefacts/attack-map.html">Case explorer</a><a href="../../coursework/index.html">Assessment</a></nav></header><main><article><h1>Lab 1: Open the SOC</h1>
+<h2>0. Before you start</h2>
+<p><strong>Access:</strong> Azure subscription; Entra tenant; subscription Contributor for deployment; Owner or User Access Administrator only for role assignment.</p>
+<p><strong>Dependencies:</strong> Getting started and account inventory.</p>
+<p><strong>Time:</strong> approximately 3 hours of practical work. <strong>Safety boundary:</strong> dedicated lab resources and fictional data only. <strong>Evidence:</strong> D01-setup, D01-proof, D01-fault, D01-cleanup plus the objective IDs mapped to this day.</p>
+<p>If a required product is unavailable, use the bundled scenario cards, synthetic data and written designs. Label every proposed portal action Simulation/Design-only and leave live execution Pending. Do not treat a synthetic event as a real product alert.</p>
+<h2>1. Objective</h2>
+<p>The hospital CFO approves a small security pilot. Establish identities, scope, and a spending trail before any telemetry flows.</p>
+<h2>2. Timed segments</h2>
+<table><thead><tr><th>Segment</th><th>Minutes</th><th>Outcome</th></tr></thead><tbody><tr><td>Access, scope and prediction</td><td>20</td><td>Identity, permissions and expected result recorded</td></tr><tr><td>Build or investigate</td><td>85</td><td>Numbered steps completed</td></tr><tr><td>Prove and break/fix</td><td>45</td><td>Evidence and corrected state</td></tr><tr><td>Cleanup and report</td><td>30</td><td>Cost and closure record</td></tr></tbody></table>
+<h2>3. Steps</h2>
+<ol>
+<li>Open portal.azure.com. Record the selected tenant and subscription IDs privately. Use a dedicated training tenant and fictional identities only. Enable MFA for the administrator; keep a separate recovery method. Expected: a fresh sign-in requests MFA.</li>
+</ol>
+<ol>
+<li>Create a named analyst account in Entra ID. At the lab resource-group scope assign Microsoft Sentinel Reader initially; use Microsoft Sentinel Responder for later incident work and Contributor for rule creation. Record which identity assigns roles. Expected: analyst has no subscription-wide Owner permission.</li>
+</ol>
+<ol>
+<li>In Cost Management, select the intended subscription and create a monthly budget in your billing currency. Choose an amount you can afford and actual/forecast email thresholds, for example 50%, 80%, 100%. Record the scope and recipients. Expected: budget is visible; this is an alert, not a spending cap.</li>
+</ol>
+<ol>
+<li>Fill templates/access-matrix.csv for platform, analyst, endpoint operator, Purview investigator, and automation identity. Separate Azure RBAC from Defender unified RBAC, Entra roles and Purview role groups. Test the analyst in a private browser window.</li>
+</ol>
+<ol>
+<li>Read getting-started.md and inventory the licenses actually available. Mark each day Live, Simulation, or Pending in templates/progress.csv. Do not activate expiring trials until the related teaching block begins.</li>
+</ol>
+<h2>4. Prove it</h2>
+<p>An analyst can read the lab scope but cannot grant roles; MFA and budget details are documented.</p>
+<p>Record the exact query/action, UTC interval, result and evidence reference. Ask a colleague to explain what the evidence establishes. If the result differs, diagnose permissions, feature availability, source collection, schema and time scope before broadening access or collecting more data.</p>
+<h2>5. Break it</h2>
+<p><strong>Controlled fault:</strong> In the written access matrix accidentally give the analyst Owner. Predict the extra powers; do not grant it in Azure.</p>
+<p>Predict the symptom first. Save the faulty result with the original configuration. Apply the fault only to a disposable lab copy or worksheet as specified. <strong>Repair:</strong> Replace Owner with the required scoped Sentinel role, and explain how a Responder differs from Contributor. Re-run the proof and record the root cause, symptom, diagnostic evidence and restored state. Never deliberately disable production protection.</p>
+<h2>6. Teardown</h2>
+<ul>
+<li>Save only redacted evidence privately. Keep original event references and UTC times.</li>
+<li>Undo the day’s test changes, temporary role assignments, policies, messages, indicators or actions. Confirm the restored state; do not remove the shared workspace before later lessons.</li>
+<li>Disable temporary detection/automation rules and job schedules; turn off or delete optional workflows/compute when finished. Deallocate optional VMs; their disks can still bill.</li>
+<li>Review cleanup.md for tenant-level licenses, subscription plan settings and collection that a resource-group deletion will not remove. Record anything deliberately retained for the next day, owner and deletion date.</li>
+</ul>
+<h2>7. Cost line</h2>
+<p>Before starting, list each planned meter in templates/cost-ledger.csv: ingestion/retention, optional VM/disks, Logic Apps actions, licensed trial/capacity and any advanced scan/compute. Offline simulation creates no Azure resources. Use current regional prices; do not write zero just because credits may apply. After the lab record actual usage when available, currency, delay and remaining resources.</p>
+<h2>8. Evidence required</h2>
+<p>Complete templates/evidence-pack.md. Include scope/access, one successful outcome, the break/fix comparison, explanation in your own words and verified cleanup. Map B01 to evidence. Record Live verified, Simulation complete, Design-only or Pending per objective; one overall day checkbox cannot prove every subskill.</p>
+<h2>9. Wardlight connection</h2>
+<p>A security operations centre is the team that checks warning signs and coordinates a response. Think of it as a hospital control room for digital services. In your final paragraph explain the business decision your evidence supports and what remains uncertain.</p>
+<h2>Reading and next step</h2>
+<p><a href="https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard">Sentinel setup</a> · <a href="https://learn.microsoft.com/en-us/azure/sentinel/billing">Billing</a></p>
+<p><a href="notes.html">Daily notes</a> · <a href="../../practice/PQ1.html">Practice</a> · <a href="../index.html">All days</a></p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

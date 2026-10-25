@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Day 15 notes: Hunt beyond the alert | Wardlight SOC Academy</title><link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script></head><body><header><a class="brand" href="../../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../../index.html">Overview</a><a href="../../getting-started.html">Start here</a><a href="../../days/index.html">Learning days</a><a href="../../coverage/index.html">Coverage</a><a href="../../downloads.html">Practical files</a><a href="../../artefacts/attack-map.html">Case explorer</a><a href="../../coursework/index.html">Assessment</a></nav></header><main><article><h1>Day 15 notes: Hunt beyond the alert</h1>
+<h2>Start in plain language</h2>
+<p>Hunting starts with a question, such as whether an account behaved unusually, even when no alert has appeared. A good hunt tests both suspicious and harmless explanations.</p>
+<h2>Words you will meet</h2>
+<p>Hypothesis: a statement to test. Baseline: normal behaviour used for comparison. Query scope: the data, people and period included in a search.</p>
+<h2>How the parts work together</h2>
+<p>Hunting begins with a question, while detection operationalizes a repeatedly useful signal. KQL syntax travels across services, but schemas and custom-detection requirements do not.</p>
+<h2>Apply it to Wardlight</h2>
+<p>There is no new alert, but the threat report suggests a suspicious process and a reused identity. The technical result matters because the hospital needs a decision it can trust while continuing to serve patients. State what the evidence establishes before recommending an action.</p>
+<h2>Worked reasoning</h2>
+<p>Question: A hunt returns zero rows. What does it prove?</p>
+<p>Reasoning: Only that the query found no matches in its data/window/scope. Verify coverage and query assumptions before claiming the behavior never occurred.</p>
+<h2>Common mistake</h2>
+<p>Replace a case-insensitive comparison with a case-sensitive exact match that drops a known variant in the synthetic query.</p>
+<p>Correction: Normalize the relevant field or use the appropriate operator; test the counterexample and explain the performance/precision tradeoff.</p>
+<h2>What the instructor demonstrates</h2>
+<p>Walk through the first two lab steps, point out the selected tenant/workspace and show a successful result. Explain one failure state and ask learners to predict its cause before correcting it. End by showing the evidence that would allow a colleague to reproduce the finding.</p>
+<h2>Required reading</h2>
+<p><a href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Official labs</a></p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

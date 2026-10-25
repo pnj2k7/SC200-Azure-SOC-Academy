@@ -1,0 +1,23 @@
+// Standalone synthetic exercise. No ingestion or built-in product tables required.
+let Events = datatable(TimeGenerated:datetime, EventId:string, Source:string, Account:string, Device:string, IP:string, Action:string, Detail:string, CorrelationId:string)[
+  datetime(2026-10-25T03:07:18Z), "E01", "Email", "maya@wardlight.example", "", "203.0.113.50", "EmailDelivered", "Fictional supplier invoice; message WL-MSG-001", "CASE-INVOICE",
+  datetime(2026-10-25T03:08:18Z), "E02", "Identity", "maya@wardlight.example", "WL-RECEPTION-01", "203.0.113.50", "SignInFailed", "Disposable lab account failure", "CASE-INVOICE",
+  datetime(2026-10-25T03:08:30Z), "E03", "Identity", "maya@wardlight.example", "WL-RECEPTION-01", "203.0.113.50", "SignInFailed", "Disposable lab account failure", "CASE-INVOICE",
+  datetime(2026-10-25T03:08:42Z), "E04", "Identity", "maya@wardlight.example", "WL-RECEPTION-01", "203.0.113.50", "SignInFailed", "Disposable lab account failure", "CASE-INVOICE",
+  datetime(2026-10-25T03:08:54Z), "E05", "Identity", "maya@wardlight.example", "WL-RECEPTION-01", "203.0.113.50", "SignInFailed", "Disposable lab account failure", "CASE-INVOICE",
+  datetime(2026-10-25T03:09:06Z), "E06", "Identity", "maya@wardlight.example", "WL-RECEPTION-01", "203.0.113.50", "SignInFailed", "Disposable lab account failure", "CASE-INVOICE",
+  datetime(2026-10-25T03:09:18Z), "E07", "Identity", "maya@wardlight.example", "WL-RECEPTION-01", "203.0.113.50", "SignInFailed", "Disposable lab account failure", "CASE-INVOICE",
+  datetime(2026-10-25T03:09:30Z), "E08", "Identity", "maya@wardlight.example", "WL-RECEPTION-01", "203.0.113.50", "SignInFailed", "Disposable lab account failure", "CASE-INVOICE",
+  datetime(2026-10-25T03:09:42Z), "E09", "Identity", "maya@wardlight.example", "WL-RECEPTION-01", "203.0.113.50", "SignInFailed", "Disposable lab account failure", "CASE-INVOICE",
+  datetime(2026-10-25T03:11:18Z), "E10", "Identity", "maya@wardlight.example", "WL-RECEPTION-01", "203.0.113.50", "SignInSucceeded", "Authentication details require further evidence", "CASE-INVOICE",
+  datetime(2026-10-25T03:13:18Z), "E11", "Endpoint", "maya@wardlight.example", "WL-RECEPTION-01", "203.0.113.50", "ProcessCreated", "powershell.exe -Command Write-Output WL-LAB", "CASE-INVOICE",
+  datetime(2026-10-25T03:16:18Z), "E12", "Data", "maya@wardlight.example", "WL-RECEPTION-01", "203.0.113.50", "FileAccessed", "WL-PATIENT-0001 export accessed; transfer unconfirmed", "CASE-INVOICE",
+  datetime(2026-10-25T03:09:18Z), "E13", "Identity", "svc-backup@wardlight.example", "WL-BACKUP-01", "192.0.2.20", "SignInFailed", "Known stale credential after scheduled rotation", "CASE-BENIGN",
+  datetime(2026-10-25T03:10:18Z), "E14", "Identity", "svc-backup@wardlight.example", "WL-BACKUP-01", "192.0.2.20", "SignInFailed", "Known stale credential after scheduled rotation", "CASE-BENIGN",
+  datetime(2026-10-25T03:11:18Z), "E15", "Identity", "svc-backup@wardlight.example", "WL-BACKUP-01", "192.0.2.20", "SignInFailed", "Known stale credential after scheduled rotation", "CASE-BENIGN",
+  datetime(2026-10-25T03:14:18Z), "E16", "Cloud", "engineer@wardlight.example", "WL-APP-01", "192.0.2.30", "ResourceTagged", "Approved lab tag change CHG-001", "CASE-CLOUD"
+];
+Events
+| where Action == "SignInFailed"
+| summarize Failures=count() by Account, Device, IP
+| where Failures >= 5

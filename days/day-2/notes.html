@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Day 2 notes: Build the evidence room | Wardlight SOC Academy</title><link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script></head><body><header><a class="brand" href="../../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../../index.html">Overview</a><a href="../../getting-started.html">Start here</a><a href="../../days/index.html">Learning days</a><a href="../../coverage/index.html">Coverage</a><a href="../../downloads.html">Practical files</a><a href="../../artefacts/attack-map.html">Case explorer</a><a href="../../coursework/index.html">Assessment</a></nav></header><main><article><h1>Day 2 notes: Build the evidence room</h1>
+<h2>Start in plain language</h2>
+<p>A log is a timestamped record of something that happened. Sentinel brings selected records into one place so an analyst can investigate them.</p>
+<h2>Words you will meet</h2>
+<p>Workspace: a container for collected records. Retention: how long records are kept. Ingestion: bringing records into the system.</p>
+<h2>How the parts work together</h2>
+<p>A workspace is a query boundary. Retention, table plan and connector determine which evidence remains available. A daily cap can create visibility gaps and does not cover every billing meter.</p>
+<h2>Apply it to Wardlight</h2>
+<p>Create the Sentinel workspace and capture the first harmless cloud control-plane change. The technical result matters because the hospital needs a decision it can trust while continuing to serve patients. State what the evidence establishes before recommending an action.</p>
+<h2>Worked reasoning</h2>
+<p>Question: The tag changed but the query returns nothing. What do you check before widening collection?</p>
+<p>Reasoning: Confirm subscription diagnostics, destination workspace, UTC time window, ingestion delay and caller permissions. Inspect connector health before assuming an attack hid the event.</p>
+<h2>Common mistake</h2>
+<p>Query a different workspace or change the time picker to five minutes before the tag operation.</p>
+<p>Correction: Restore the workspace and a two-hour UTC window. Compare event time, ingestion time and portal time picker.</p>
+<h2>What the instructor demonstrates</h2>
+<p>Walk through the first two lab steps, point out the selected tenant/workspace and show a successful result. Explain one failure state and ask learners to predict its cause before correcting it. End by showing the evidence that would allow a colleague to reproduce the finding.</p>
+<h2>Required reading</h2>
+<p><a href="https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard">Sentinel setup</a> · <a href="https://learn.microsoft.com/en-us/azure/sentinel/billing">Billing</a></p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>

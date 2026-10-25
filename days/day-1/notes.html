@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Day 1 notes: Open the SOC | Wardlight SOC Academy</title><link rel="stylesheet" href="../../assets/css/site.css"><script defer src="../../assets/js/site.js"></script></head><body><header><a class="brand" href="../../index.html">WARDLIGHT / SOC ACADEMY</a><nav aria-label="Main"><a href="../../index.html">Overview</a><a href="../../getting-started.html">Start here</a><a href="../../days/index.html">Learning days</a><a href="../../coverage/index.html">Coverage</a><a href="../../downloads.html">Practical files</a><a href="../../artefacts/attack-map.html">Case explorer</a><a href="../../coursework/index.html">Assessment</a></nav></header><main><article><h1>Day 1 notes: Open the SOC</h1>
+<h2>Start in plain language</h2>
+<p>A security operations centre is the team that checks warning signs and coordinates a response. Think of it as a hospital control room for digital services.</p>
+<h2>Words you will meet</h2>
+<p>Tenant: an organisation’s identity directory. Subscription: the account that holds Azure resources and their bill. Role: permission to perform a defined set of actions.</p>
+<h2>How the parts work together</h2>
+<p>A tenant is the identity directory; a subscription is a billing/resource boundary. Azure RBAC grants resource actions, while Defender and Purview apply their own permissions. Least privilege must work across all of them.</p>
+<h2>Apply it to Wardlight</h2>
+<p>The hospital CFO approves a small security pilot. Establish identities, scope, and a spending trail before any telemetry flows. The technical result matters because the hospital needs a decision it can trust while continuing to serve patients. State what the evidence establishes before recommending an action.</p>
+<h2>Worked reasoning</h2>
+<p>Question: Does a subscription budget stop a runaway ingestion pipeline?</p>
+<p>Reasoning: No. It warns, and billing data can lag. Limit data sources, monitor usage, and stop chargeable resources yourself.</p>
+<h2>Common mistake</h2>
+<p>In the written access matrix accidentally give the analyst Owner. Predict the extra powers; do not grant it in Azure.</p>
+<p>Correction: Replace Owner with the required scoped Sentinel role, and explain how a Responder differs from Contributor.</p>
+<h2>What the instructor demonstrates</h2>
+<p>Walk through the first two lab steps, point out the selected tenant/workspace and show a successful result. Explain one failure state and ask learners to predict its cause before correcting it. End by showing the evidence that would allow a colleague to reproduce the finding.</p>
+<h2>Required reading</h2>
+<p><a href="https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard">Sentinel setup</a> · <a href="https://learn.microsoft.com/en-us/azure/sentinel/billing">Billing</a></p></article></main><footer>SC-200 learning programme · Baseline checked 25 October 2026 · Fictional data only · Independent training material</footer></body></html>
