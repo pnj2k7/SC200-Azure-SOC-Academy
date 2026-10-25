@@ -15,6 +15,8 @@ Checked 25 October 2026.
 | JavaScript runtime | No errors observed in the tested flows |
 | Azure deployment template | Compiles successfully with Microsoft's Bicep CLI after correcting the fractional quota expression |
 | Static publication artifact | Allowlisted site packaging succeeds |
+| Public repository | Course files pushed to pnj2k7/SC200-Azure-SOC-Academy |
+| GitHub Pages | Initial workflow completed successfully; public guide returned HTTP 200 |
 
 No Azure resources were deployed during this local validation. Azure what-if, service-side KQL execution, ingestion, billing and licensed product actions require verification in the training subscription/tenant. A successful Bicep compilation does not prove regional availability, entitlement, permissions or runtime success.
 

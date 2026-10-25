@@ -2,6 +2,8 @@
 
 An 18-day, scenario-led security operations programme for corporate training and individual study. Build and investigate a fictional hospital environment using Azure, Microsoft Sentinel and the Microsoft security portfolio. No prior security-job experience is assumed; basic computer use and willingness to read technical steps are required.
 
+Published guide: [Open the course](https://pnj2k7.github.io/SC200-Azure-SOC-Academy/). Repository: [pnj2k7/SC200-Azure-SOC-Academy](https://github.com/pnj2k7/SC200-Azure-SOC-Academy).
+
 Start with [Getting started](getting-started.md), then open [the HTML course](index.html). Download the repository ZIP from GitHub, extract it and double-click index.html. The pages work offline; Microsoft portals require internet and appropriate accounts. [handbook.html](handbook.html) is a single-file reading edition with embedded styles.
 
 ## Coverage and honesty

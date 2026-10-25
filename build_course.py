@@ -344,6 +344,8 @@ def build():
 
 An 18-day, scenario-led security operations programme for corporate training and individual study. Build and investigate a fictional hospital environment using Azure, Microsoft Sentinel and the Microsoft security portfolio. No prior security-job experience is assumed; basic computer use and willingness to read technical steps are required.
 
+Published guide: [Open the course](https://pnj2k7.github.io/SC200-Azure-SOC-Academy/). Repository: [pnj2k7/SC200-Azure-SOC-Academy](https://github.com/pnj2k7/SC200-Azure-SOC-Academy).
+
 Start with [Getting started](getting-started.md), then open [the HTML course](index.html). Download the repository ZIP from GitHub, extract it and double-click index.html. The pages work offline; Microsoft portals require internet and appropriate accounts. [handbook.html](handbook.html) is a single-file reading edition with embedded styles.
 
 ## Coverage and honesty
@@ -947,27 +949,31 @@ Eighteen days provide room for twelve teaching modules. Nine current official ob
 
 The source’s README, prerequisite structure, scenario, daily section hierarchy, representative complete lab sheets and assessment conventions informed the design. The source’s every PDF/interactive asset has not been independently functionally tested. This is an original curriculum following its teaching pattern, not a file-for-file reproduction or an endorsement of all source cloud instructions.
 ''')
-    doc('PUBLISH.md','''# Publish to pnj2k7 on GitHub
+    doc('PUBLISH.md','''# Publication and GitHub Pages maintenance
 
-Target repository: pnj2k7/SC200-Azure-SOC-Academy. This target name is a proposal until creation is confirmed; no published URL is claimed by these files.
+Published repository: [pnj2k7/SC200-Azure-SOC-Academy](https://github.com/pnj2k7/SC200-Azure-SOC-Academy). Published guide: [Wardlight SOC Academy](https://pnj2k7.github.io/SC200-Azure-SOC-Academy/). The initial Pages workflow completed successfully and the course URL returned HTTP 200 on 25 October 2026.
 
-## Publish the reviewed files
+## Update the existing repository
 
-1. Sign into GitHub as pnj2k7 and create a new public repository named SC200-Azure-SOC-Academy without an initial README/license. Confirm that you intend the original training content to be public.
+Clone the existing repository, edit the course source, regenerate with `python build_course.py`, run `python scripts/validate.py`, review the diff and push to main. The Pages workflow validates and publishes the site. Check its result and the deployed URL after each update. Keep objective evidence and private training exports outside Git.
+
+## Publish your own independent copy
+
+1. Sign into your own GitHub account and create a new public repository without an initial README/license. Confirm that you intend the original training content to be public. The pnj2k7 repository already exists; do not attempt to recreate it.
 2. Upload the contents of this folder, including .github/workflows/pages.yml and .nojekyll. Do not upload the parent Cloud Computing folder; it contains unrelated private learning material. Check that no evidence, tokens, keys or onboarding packages are included.
-3. Alternatively use an authenticated Git CLI from this directory:
+3. Alternatively use an authenticated Git CLI from a new copy of the course directory. Replace YOUR_ACCOUNT and YOUR_REPOSITORY with your own target:
 
 ```bash
 git init
 git branch -M main
 git add .
 git commit -m "Add Wardlight SC-200 scenario learning programme"
-git remote add origin https://github.com/pnj2k7/SC200-Azure-SOC-Academy.git
+git remote add origin https://github.com/YOUR_ACCOUNT/YOUR_REPOSITORY.git
 git push -u origin main
 ```
 
 4. In repository Settings > Pages choose GitHub Actions as the source. The included workflow validates the content, creates a clean site artifact and deploys it with GitHub’s Pages actions. No Azure hosting is needed for these static learning pages.
-5. Inspect the Pages workflow and open the deployment URL it returns. If using this account/name, the expected address is https://pnj2k7.github.io/SC200-Azure-SOC-Academy/ after successful publication; this is not a live-link claim.
+5. Inspect the Pages workflow and open the deployment URL it returns. Your independent copy uses its own account/repository path.
 6. Test the landing page, a lab, quiz, coverage page and practical downloads from the deployed URL. Publish the URL only after those checks pass.
 
 ## Offline use
